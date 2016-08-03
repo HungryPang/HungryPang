@@ -77,12 +77,12 @@ public class csFoodSystem : MonoBehaviour {
 
     FoodInfo.FOODTYPE[] FoodBoxCanTypeArray = new FoodInfo.FOODTYPE[12];        // 선택된 동물이 먹는 먹이종류
     public int nFoodtypeNum = 0;
-    public csGameSystem     gameMgr = null;
-    public csResourceMgr    resourceMgr = null;
-    public csFoodBox        FoodBox = null;
-    public csLifeSystem     lifeSystem = null;
-    public csPigTimeSystem  pigtimeSystem = null;
-    public csScoreSystem    scoreSystem = null;
+    public csGameSystem gameMgr = null;
+    public csResourceMgr resourceMgr = null;
+    public csFoodBox FoodBox = null;
+    public csLifeSystem lifeSystem = null;
+    public csPigTimeSystem pigtimeSystem = null;
+    public csScoreSystem scoreSystem = null;
 
     LinkedList<FoodInfo.FOODTYPE> FoodStorageList = new LinkedList<FoodInfo.FOODTYPE>();
 
@@ -94,7 +94,7 @@ public class csFoodSystem : MonoBehaviour {
         scoreSystem = gameMgr.scoreSystem;
     }
 
-    void Start ()
+    void Start()
     {
         //print(resourceMgr);
         FoodBox = GetComponentInChildren<csFoodBox>();
@@ -119,28 +119,56 @@ public class csFoodSystem : MonoBehaviour {
             FoodStorageList.AddLast(val);
         }
     }
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    // Update is called once per frame
+    void Update() {
+
+    }
 
     public void ComposeFoodBoxList(int num, FoodInfo.FOODTYPE type)
     {
         FoodBoxCanTypeArray[num] = type;
     }
 
+    public void ExplosionNearFoodItem(int y, int x, FoodInfo.FOODTYPE type)
+    {
+        if (x < 0 || y < 0 || x >= FoodBox.nRowSize || y >= FoodBox.nColSize) return;
+
+
+        bool bCheck = false;
+        if (FoodBox.FoodList[y, x].GetComponent<csFoodItem>().bChaining == false
+            && FoodBox.FoodList[y, x].GetComponent<csFoodItem>().GetSetFoodData.eType == type)
+        {
+            bCheck = true;
+            FoodBox.FoodList[y, x].GetComponent<csFoodItem>().bChaining = true;
+        }
+
+        if (true == bCheck)
+        {
+            if (y % 2 == 0)
+            {
+                ExplosionNearFoodItem(y - 1, x - 1, type);
+                ExplosionNearFoodItem(y - 1, x, type);
+                ExplosionNearFoodItem(y + 1, x - 1, type);
+                ExplosionNearFoodItem(y + 1, x, type);
+                ExplosionNearFoodItem(y, x - 1, type);
+                ExplosionNearFoodItem(y, x + 1, type);
+            }
+            else
+            {
+                ExplosionNearFoodItem(y - 1, x, type);
+                ExplosionNearFoodItem(y - 1, x + 1, type);
+                ExplosionNearFoodItem(y + 1, x, type);
+                ExplosionNearFoodItem(y + 1, x + 1, type);
+                ExplosionNearFoodItem(y, x - 1, type);
+                ExplosionNearFoodItem(y, x + 1, type);
+            }
+        }
+    }
+
     // 먹으면 저장리스트에서 다른걸 꺼내옴
     public void ChangeFoodItemInStorage(csFoodItem item)
     {
-        //for(int i = 0; i < 8; ++i)
-        //{
-        //    for(int j = 0; j < 8; ++j)
-        //    {
-        //        if (FoodBox.FoodList[i, j].GetComponent<csFoodItem>() == item)
-        //            print(i + "/" + j);
-        //    }
-        //}
         int nIndex = -1;
         FoodInfo.FOODTYPE val = item.GetSetFoodData.eType;
         FoodStorageList.AddLast(val);

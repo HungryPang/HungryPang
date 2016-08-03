@@ -8,12 +8,14 @@ public class csFoodItem : MonoBehaviour {
     public csFoodSystem foodSystem = null;
     FoodInfo.FoodData   myFoodData;
 
-    //public GameObject Efx;
+    public GameObject Efx;
 
-    bool bEffectStart = false;
-    float fEffectAccTime    = 0.0f;
-    float fEffectAniSpd     = 0.35f;
-    Sprite[] m_ArrEffectDust = null;
+    public bool bChaining = false;
+    public int nMyPosX;
+    public int nMyPosY;
+    public int SetPosX { set { nMyPosX = value; } }
+    public int SetPosY { set { nMyPosY = value; } }
+
     //SpriteRenderer effectRender;
 
     public FoodInfo.FoodData GetSetFoodData
@@ -31,27 +33,28 @@ public class csFoodItem : MonoBehaviour {
         gameSystem = GetComponentInParent<csGameSystem>();
         selectSystem = gameSystem.selectMgr;
         foodSystem = gameSystem.foodSystem;
-
-        m_ArrEffectDust = gameSystem.resourceMgr.GetmBoomDustSpriteArray;
-        //print(m_ArrEffectDust.Length);
     }
 	
 	// Update is called once per frame
 	void Update () {
+        // 도화선 폭팔
+        if (true == bChaining)
+        {
+            Efx.Spawn(this.transform.position, Quaternion.identity);
+            foodSystem.ChangeFoodItemInStorage(this);
+            foodSystem.GatherScore();
+            bChaining = false;
+        }
 
         // 클릭 알고리즘
         if (Input.GetMouseButtonDown(0) && PickingTrue())
         {
             if(selectSystem.EatCheckFood(this) || foodSystem.CheckPigTime())
             {
-                foodSystem.ChangeFoodItemInStorage(this);
-                bEffectStart = true;
-                foodSystem.GatherScore();
-                //Efx.Spawn(this.transform.position, Quaternion.identity);
+                // 도화선 검사
+                foodSystem.ExplosionNearFoodItem(nMyPosY, nMyPosX, myFoodData.eType);
             }
         }
-        //if(bEffectStart)
-        //    StartEffect();
     }
 
     // Setting FoodData
@@ -59,12 +62,6 @@ public class csFoodItem : MonoBehaviour {
     {
         GetComponent<SpriteRenderer>().sprite = sprite;
         myFoodData = data;
-    }
-    // Collider FoodItem
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.name == "Mouse")
-            print("FoodItem 충돌");
     }
 
     bool PickingTrue()
@@ -79,18 +76,4 @@ public class csFoodItem : MonoBehaviour {
         }
         return bResult;
     }
-
-    //void StartEffect()
-    //{
-    //    fEffectAccTime += Time.deltaTime;
-    //    float fFrame = m_ArrEffectDust.Length;
-    //    int nFrame = (int)((fEffectAccTime * fFrame) / fEffectAniSpd);
-
-    //    if (nFrame >= m_ArrEffectDust.Length)
-    //    {
-            
-    //    }
-    //    else
-    //        effectRender.sprite = m_ArrEffectDust[nFrame];
-    //}
 }

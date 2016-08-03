@@ -21,11 +21,8 @@ public class csFoodBox : MonoBehaviour {
         BoxCollider2D collider = GetComponent<BoxCollider2D>();
         Vector2 pos = transform.position;
         Vector2 size = Vector2.Scale(collider.size * 0.5f, transform.localScale);
-
         Vector2 offset = new Vector2(pos.x - size.x + OffsetStartPos.x, pos.y + size.y - OffsetStartPos.y);
         Vector2 pitch = new Vector2(size.x / nColSize, size.y / nRowSize) * 2;
-
-
         Vector2 temp = new Vector2();
 
         FoodList        = new GameObject[nColSize, nRowSize];
@@ -51,9 +48,11 @@ public class csFoodBox : MonoBehaviour {
                 newFood.transform.parent = transform;
                 newFoodSlot.transform.parent = transform;
 
+                newFood.GetComponent<csFoodItem>().SetPosX = x;
+                newFood.GetComponent<csFoodItem>().SetPosY = y;
+
                 newFood.transform.position = offset + temp;
                 newFoodSlot.transform.position = offset + temp;
-
 
                 if (y % 2 == 1 && x == nColSize - 1)
                 {
