@@ -1,0 +1,457 @@
+fileFormatVersion: 2
+guid: b4cf22ecc85c1d942a19f4fb75aa45ab
+timeCreated: 1469972520
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: BoomDust_0
+    21300002: BoomDust_1
+    21300004: BoomDust_2
+    21300006: BoomDust_3
+    21300008: BoomDust_4
+    21300010: BoomDust_5
+    21300012: BoomDust_6
+    21300014: BoomDust_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: BoomDust_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 22}
+        - {x: 4, y: 23}
+        - {x: -3, y: 23}
+        - {x: -19, y: 11}
+        - {x: -19, y: -9}
+        - {x: -12, y: -22}
+        - {x: 5, y: -22}
+        - {x: 21, y: -9}
+        - {x: 21, y: 2}
+        - {x: 18, y: 3}
+    - name: BoomDust_1
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 11, y: 49}
+        - {x: -7, y: 49}
+        - {x: -37, y: 5}
+        - {x: -38, y: 2}
+        - {x: -38, y: -5}
+        - {x: -8, y: -27}
+        - {x: -7, y: -27}
+        - {x: 0, y: -46}
+        - {x: 3, y: -47}
+        - {x: 7, y: -47}
+        - {x: 41, y: -16}
+        - {x: 41, y: 8}
+        - {x: 32, y: 33}
+    - name: BoomDust_2
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 59}
+        - {x: 0, y: 59}
+        - {x: -47, y: 11}
+        - {x: -47, y: -13}
+        - {x: -39, y: -28}
+        - {x: -9, y: -57}
+        - {x: 29, y: -57}
+        - {x: 49, y: -21}
+        - {x: 49, y: 23}
+        - {x: 8, y: 58}
+      - - {x: 29, y: -35}
+        - {x: 29, y: -40}
+        - {x: 31, y: -46}
+        - {x: 38, y: -52}
+        - {x: 41, y: -52}
+        - {x: 45, y: -49}
+        - {x: 45, y: -41}
+        - {x: 36, y: -35}
+      - - {x: -22, y: -34}
+        - {x: -28, y: -34}
+        - {x: -31, y: -35}
+        - {x: -38, y: -41}
+        - {x: -38, y: -47}
+        - {x: -37, y: -50}
+        - {x: -32, y: -50}
+        - {x: -23, y: -42}
+        - {x: -22, y: -40}
+      - - {x: 35, y: 44}
+        - {x: 32, y: 43}
+        - {x: 29, y: 35}
+        - {x: 29, y: 28}
+        - {x: 35, y: 28}
+        - {x: 45, y: 36}
+        - {x: 45, y: 41}
+        - {x: 44, y: 44}
+      - - {x: -33, y: 46}
+        - {x: -36, y: 43}
+        - {x: -36, y: 35}
+        - {x: -28, y: 30}
+        - {x: -19, y: 30}
+        - {x: -19, y: 37}
+        - {x: -25, y: 46}
+    - name: BoomDust_3
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 0
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: -50}
+        - {x: -4, y: -54}
+        - {x: -4, y: -70}
+        - {x: 5, y: -70}
+        - {x: 5, y: -50}
+      - - {x: 63, y: 40}
+        - {x: 28, y: 50}
+        - {x: -38, y: 50}
+        - {x: -61, y: 16}
+        - {x: -61, y: -32}
+        - {x: -56, y: -46}
+        - {x: 33, y: -46}
+        - {x: 53, y: -35}
+        - {x: 66, y: -7}
+        - {x: 66, y: 31}
+      - - {x: -4, y: 70}
+        - {x: -4, y: 52}
+        - {x: -2, y: 51}
+        - {x: 5, y: 51}
+        - {x: 5, y: 70}
+    - name: BoomDust_4
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -38, y: 66}
+        - {x: -67, y: 18}
+        - {x: -67, y: -56}
+        - {x: -38, y: -68}
+        - {x: 55, y: -68}
+        - {x: 68, y: -56}
+        - {x: 68, y: 29}
+        - {x: 48, y: 66}
+    - name: BoomDust_5
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 29, y: -20}
+        - {x: -16, y: -40}
+        - {x: -16, y: -69}
+        - {x: 39, y: -69}
+        - {x: 60, y: -45}
+        - {x: 62, y: -35}
+        - {x: 62, y: -20}
+      - - {x: -31, y: -4}
+        - {x: -33, y: -8}
+        - {x: -33, y: -12}
+        - {x: -34, y: -5}
+        - {x: -43, y: 5}
+        - {x: -60, y: 5}
+        - {x: -68, y: -3}
+        - {x: -68, y: -41}
+        - {x: -59, y: -52}
+        - {x: -16, y: -52}
+        - {x: -16, y: -5}
+        - {x: -21, y: -3}
+      - - {x: 12, y: -20}
+        - {x: 10, y: -24}
+        - {x: 10, y: -28}
+        - {x: 12, y: -32}
+        - {x: 18, y: -32}
+        - {x: 23, y: -30}
+        - {x: 23, y: -21}
+        - {x: 21, y: -20}
+      - - {x: 21, y: 66}
+        - {x: 21, y: 1}
+        - {x: 25, y: -18}
+        - {x: 58, y: -18}
+        - {x: 70, y: -10}
+        - {x: 70, y: 42}
+        - {x: 39, y: 66}
+      - - {x: -46, y: 19}
+        - {x: -51, y: 18}
+        - {x: -51, y: 5}
+        - {x: -48, y: 3}
+        - {x: -34, y: 3}
+        - {x: -30, y: 6}
+        - {x: -30, y: 13}
+        - {x: -37, y: 19}
+      - - {x: -8, y: 31}
+        - {x: -2, y: 34}
+        - {x: 24, y: 27}
+        - {x: 28, y: 28}
+        - {x: 28, y: 63}
+        - {x: 16, y: 66}
+        - {x: 5, y: 67}
+        - {x: -14, y: 67}
+        - {x: -23, y: 65}
+        - {x: -39, y: 61}
+        - {x: -48, y: 44}
+        - {x: -48, y: 24}
+        - {x: -37, y: 13}
+        - {x: -8, y: 11}
+        - {x: -2, y: 11}
+        - {x: 0, y: 30}
+        - {x: -3, y: 31}
+        - {x: -10, y: 31}
+    - name: BoomDust_6
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 0
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 9, y: -33}
+        - {x: -4, y: -36}
+        - {x: -11, y: -50}
+        - {x: -11, y: -58}
+        - {x: -10, y: -66}
+        - {x: 24, y: -66}
+        - {x: 40, y: -49}
+        - {x: 40, y: -34}
+        - {x: 39, y: -33}
+      - - {x: -60, y: 3}
+        - {x: -64, y: 2}
+        - {x: -64, y: -43}
+        - {x: -45, y: -46}
+        - {x: -41, y: -45}
+        - {x: -38, y: -44}
+        - {x: -36, y: -41}
+        - {x: -37, y: -43}
+        - {x: -38, y: -49}
+        - {x: -37, y: -52}
+        - {x: -30, y: -52}
+        - {x: -24, y: -50}
+        - {x: -23, y: -47}
+        - {x: -23, y: -23}
+        - {x: -35, y: 3}
+      - - {x: 54, y: -22}
+        - {x: 48, y: -22}
+        - {x: 43, y: -28}
+        - {x: 43, y: -36}
+        - {x: 45, y: -41}
+        - {x: 54, y: -41}
+        - {x: 58, y: -36}
+        - {x: 59, y: -34}
+        - {x: 59, y: -28}
+      - - {x: 49, y: 50}
+        - {x: 37, y: 50}
+        - {x: 33, y: 47}
+        - {x: 33, y: 14}
+        - {x: 50, y: 3}
+        - {x: 66, y: 3}
+        - {x: 67, y: 6}
+        - {x: 67, y: 21}
+        - {x: 64, y: 39}
+      - - {x: -37, y: 14}
+        - {x: -42, y: 14}
+        - {x: -45, y: 13}
+        - {x: -45, y: 6}
+        - {x: -40, y: 4}
+        - {x: -36, y: 4}
+        - {x: -34, y: 7}
+        - {x: -34, y: 11}
+      - - {x: -15, y: 30}
+        - {x: -16, y: 29}
+        - {x: -16, y: 19}
+        - {x: -13, y: 11}
+        - {x: -5, y: 11}
+        - {x: -3, y: 12}
+        - {x: -3, y: 29}
+        - {x: -6, y: 30}
+      - - {x: -24, y: 63}
+        - {x: -41, y: 54}
+        - {x: -41, y: 25}
+        - {x: -19, y: 25}
+        - {x: 8, y: 41}
+        - {x: 8, y: 62}
+        - {x: 7, y: 63}
+      - - {x: 10, y: 47}
+        - {x: 11, y: 45}
+        - {x: 13, y: 45}
+        - {x: 21, y: 49}
+        - {x: 21, y: 57}
+        - {x: 20, y: 60}
+        - {x: 18, y: 61}
+        - {x: 10, y: 61}
+    - name: BoomDust_7
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 0
+        width: 140
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 1, y: -47}
+        - {x: -14, y: -56}
+        - {x: -14, y: -68}
+        - {x: 23, y: -68}
+        - {x: 31, y: -61}
+        - {x: 31, y: -47}
+      - - {x: -31, y: -46}
+        - {x: -35, y: -48}
+        - {x: -35, y: -52}
+        - {x: -34, y: -57}
+        - {x: -28, y: -57}
+        - {x: -25, y: -55}
+        - {x: -25, y: -51}
+        - {x: -27, y: -46}
+      - - {x: -45, y: -37}
+        - {x: -48, y: -40}
+        - {x: -48, y: -48}
+        - {x: -44, y: -50}
+        - {x: -38, y: -50}
+        - {x: -36, y: -48}
+        - {x: -36, y: -42}
+        - {x: -37, y: -37}
+      - - {x: 49, y: -37}
+        - {x: 49, y: -41}
+        - {x: 50, y: -43}
+        - {x: 54, y: -43}
+        - {x: 59, y: -40}
+        - {x: 59, y: -35}
+        - {x: 58, y: -33}
+        - {x: 54, y: -32}
+      - - {x: -66, y: -6}
+        - {x: -67, y: -7}
+        - {x: -67, y: -38}
+        - {x: -63, y: -40}
+        - {x: -35, y: -40}
+        - {x: -33, y: -38}
+        - {x: -33, y: -19}
+        - {x: -48, y: -6}
+      - - {x: 57, y: 1}
+        - {x: 52, y: -1}
+        - {x: 52, y: -7}
+        - {x: 57, y: -11}
+        - {x: 64, y: -11}
+        - {x: 64, y: 0}
+        - {x: 63, y: 1}
+      - - {x: 38, y: 50}
+        - {x: 38, y: 32}
+        - {x: 53, y: 7}
+        - {x: 68, y: 7}
+        - {x: 70, y: 9}
+        - {x: 70, y: 37}
+        - {x: 45, y: 50}
+      - - {x: -48, y: 40}
+        - {x: -48, y: 30}
+        - {x: -40, y: 30}
+        - {x: -36, y: 31}
+        - {x: -36, y: 36}
+        - {x: -42, y: 40}
+      - - {x: 4, y: 62}
+        - {x: 1, y: 65}
+        - {x: -27, y: 65}
+        - {x: -38, y: 61}
+        - {x: -38, y: 50}
+        - {x: -35, y: 44}
+        - {x: -28, y: 37}
+        - {x: -26, y: 37}
+        - {x: -23, y: 40}
+        - {x: -6, y: 45}
+        - {x: 4, y: 55}
+      - - {x: 23, y: 59}
+        - {x: 13, y: 65}
+        - {x: 11, y: 65}
+        - {x: 10, y: 63}
+        - {x: 10, y: 58}
+        - {x: 15, y: 49}
+        - {x: 18, y: 49}
+        - {x: 22, y: 51}
+        - {x: 23, y: 54}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
