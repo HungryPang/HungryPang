@@ -157,6 +157,8 @@ public class csAnimalSystem : MonoBehaviour {
     public csResourceMgr    resourceMgr = null;
 
     public csAnimalItem[] AnimalDeckList = new csAnimalItem[4];
+    public GameObject objClickUI = null;
+
 	// Use this for initialization
     void Awake()
     {
@@ -201,6 +203,14 @@ public class csAnimalSystem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+
+        foreach (csAnimalItem Deckitem in AnimalDeckList)
+        {
+            if(Deckitem.bClick == true)
+            {
+                objClickUI.GetComponent<SpriteRenderer>().enabled = true;
+                objClickUI.transform.position = Deckitem.transform.position;
+            }
+        }
+    }
 }

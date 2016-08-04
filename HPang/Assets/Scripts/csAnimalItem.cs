@@ -10,6 +10,7 @@ public class csAnimalItem : MonoBehaviour {
     public csGameSystem gameMgr         = null;
     public csSelectedManger selectMgr   = null;
 
+    public bool bClick = false;
     // Use this for initialization
     void Start () {
         //gameMgr   = GetComponent<csGameSystem>();
@@ -29,10 +30,11 @@ public class csAnimalItem : MonoBehaviour {
 
             //print(this.transform);
             //print(hit.collider.transform);
-
+            bClick = false;
             if (hit.collider != null && hit.collider.transform == this.transform)
             {
                 selectMgr.SetupAnimal(this);
+                bClick = true;
             }
         }
 	}

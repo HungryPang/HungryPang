@@ -31,6 +31,7 @@ public class csResourceMgr : MonoBehaviour {
     Sprite[] mComboSprites = null;
 
     public Sprite[] mFeedBackSprites = null;
+    public Sprite[] mTempFront = null;
 
     public Sprite[] GetFoodSpriteArray{ get { return mFoodSprites; } }
     public Sprite[] GetAnimalSpriteArray { get { return mAnimalSprites; } }
@@ -46,11 +47,12 @@ public class csResourceMgr : MonoBehaviour {
         mAnimalSprites = new Sprite[4];
         mAniamlFrontSprites = new Sprite[4];
         mFeedBackSprites = new Sprite[4];
+        mTempFront = new Sprite[4];
         for (int i = 0; i < 4; ++i)
         {
             mAnimalSprites[i] = Resources.Load<Sprite>("01.InGame/animal_" + i.ToString());
             mAniamlFrontSprites = Resources.LoadAll<Sprite>("01.InGame/animal_Front_Sprite_" + i.ToString());
-
+            mTempFront[i] = Resources.Load<Sprite>("01.InGame/animal_Front_" + i.ToString());
             SpriteImgList.Add(new ResourceNsp.strImage(mAniamlFrontSprites, mAniamlFrontSprites.Length));
 
             mFeedBackSprites[i] = Resources.Load<Sprite>("02.UI/UI_FeedBack_" + i.ToString());

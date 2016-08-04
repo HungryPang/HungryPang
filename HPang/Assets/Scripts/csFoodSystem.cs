@@ -114,7 +114,7 @@ public class csFoodSystem : MonoBehaviour {
         {
             for (int x = 0; x < FoodBox.nColSize; ++x)
             {
-                int nIndex = (int)FoodBoxCanTypeArray[Random.Range(0, nFoodtypeNum - 1)];
+                int nIndex = (int)FoodBoxCanTypeArray[Random.Range(0, nFoodtypeNum)];
                 //int nIndex = Random.Range(0, 5);
                 FoodBox.FoodList[y, x].GetComponent<csFoodItem>().gameSystem = gameMgr;
                 FoodBox.FoodList[y, x].GetComponent<csFoodItem>().SettingFoodData(
@@ -170,28 +170,15 @@ public class csFoodSystem : MonoBehaviour {
             }
         }
         if(0 != BoomCont)
-            comboSystem.IncreaseComboCount(BoomCont);
-        
-        if(0 == BoomCont && Input.GetMouseButtonDown(0) && bCheckClick)
+            comboSystem.IncreaseComboCount(1);
+
+        if(8 <= BoomCont)
+            Handheld.Vibrate();
+
+        if (0 == BoomCont && Input.GetMouseButtonDown(0) && bCheckClick)
         {
             RenderEatFoodFeedBack(0);
         }
-
-    }
-
-    bool PickingTrueInFoodBox()
-    {
-        print(Input.mousePosition);
-        bool bResult = false;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
-        print(hit.collider.transform);
-
-        if (hit.collider != null && hit.collider.transform == this.transform)
-        {
-            bResult = true;
-        }
-        return bResult;
     }
 
     public void RenderEatFoodFeedBack(int num)
@@ -247,7 +234,7 @@ public class csFoodSystem : MonoBehaviour {
     public void ChangeFoodItemInStorage(csFoodItem item)
     {
         int nIndex = -1;
-        FoodInfo.FOODTYPE val = item.GetSetFoodData.eType;
+        FoodInfo.FOODTYPE val = FoodBoxCanTypeArray[Random.Range(0, nFoodtypeNum)];
         FoodStorageList.AddLast(val);
         FoodStorageList.RemoveFirst();
         nIndex = (int)FoodStorageList.First.Value;
@@ -262,8 +249,8 @@ public class csFoodSystem : MonoBehaviour {
     // 점수 주기
     public void GatherScore()
     {
-        lifeSystem.IncreaseLifePoint(10.0f);
-        pigtimeSystem.IncreasePigValue(30.0f);
+        lifeSystem.IncreaseLifePoint(4.0f);
+        pigtimeSystem.IncreasePigValue(4.0f);
         scoreSystem.IncreaseScore(500);
        // comboSystem.IncreaseComboCount(1);
     }

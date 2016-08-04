@@ -51,6 +51,9 @@ public class csFoodItem : MonoBehaviour {
                 // 도화선 검사
                 foodSystem.ExplosionNearFoodItem(nMyPosY, nMyPosX, myFoodData.eType);
                 foodSystem.RenderEatFoodFeedBack(EatCheckResult);
+
+                if(foodSystem.CheckPigTime())
+                    foodSystem.RenderEatFoodFeedBack(3);
             }
         }
     }

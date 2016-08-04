@@ -50,8 +50,8 @@ public class csSelectedManger : MonoBehaviour {
                 // 이미지없어서 예외처리 대충
                 if ((int)SelectedAnimalItem.MyAnimal.eAnimalType == 0)
                     SelectedAnimalImg.SetImage(resourceMgr.SpriteImgList[(int)SelectedAnimalItem.MyAnimal.eAnimalType].sprite[FrameCnt]);
-                else
-                    SelectedAnimalImg.SetImage(null);
+                //else
+                //    SelectedAnimalImg.SetImage(resourceMgr.GetAnimalFrontSpriteArray[]);
             }
                 
         }
@@ -64,10 +64,11 @@ public class csSelectedManger : MonoBehaviour {
         AnimalSystem.Animal itemAnimal = SelectedAnimalItem.MyAnimal;
 
         animalSpriteImg = resourceMgr.SpriteImgList[(int)itemAnimal.eAnimalType].sprite;
+        print((int)itemAnimal.eAnimalType);
         if((int)itemAnimal.eAnimalType == 0)    // 스프라이트 이미지가 없음
             SelectedAnimalImg.SetImage(resourceMgr.SpriteImgList[(int)itemAnimal.eAnimalType].sprite[0]);
         else
-            SelectedAnimalImg.SetImage(null);
+            SelectedAnimalImg.SetImage(resourceMgr.mTempFront[(int)itemAnimal.eAnimalType]);
 
         int nCnt = 0;
         foreach (csRenderImage FoodIter in FoodArray)
