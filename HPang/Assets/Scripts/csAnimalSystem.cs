@@ -45,7 +45,7 @@ namespace AnimalSystem
 
         public int EatableFood(FoodInfo.FOODTYPE testType)
         {
-            int nResult = 2;   // 2 - Excellent, 1 - Great, 0 - Good, -1 - Can'tEat
+            int nResult = 3;   // 2 - Excellent, 1 - Great, 0 - Good, -1 - Can'tEat
             foreach (FoodInfo.FOODTYPE myEatType in ArrCanEatFood)
             {
                 if (myEatType == testType){

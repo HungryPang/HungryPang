@@ -7,6 +7,7 @@ public class csEffectScript : MonoBehaviour {
     public float EffectAnimationTime;
     public float FrameSpeed = 1.0f;
     public string strEffectImgName;
+    public bool EffectRandomRot = false;
 
     int FrameCnt;
     Sprite[] SpriteArray;
@@ -20,7 +21,10 @@ public class csEffectScript : MonoBehaviour {
         FrameCnt = SpriteArray.Length;
     }
     void Start () {
-
+        if(true == EffectRandomRot)
+        {
+            this.transform.Rotate(new Vector3(0.0f, 0.0f, Random.Range(0, 360)));
+        }
     }
 	
 	// Update is called once per frame
@@ -28,9 +32,11 @@ public class csEffectScript : MonoBehaviour {
 
         fEffectAccTime += Time.deltaTime;
         int nFrame = (int)((fEffectAccTime * FrameSpeed) / EffectAnimationTime);
+        //print(nFrame);
 
         if(nFrame >= FrameCnt)
         {
+            fEffectAccTime = 0;
             this.gameObject.Despawn();
         }
         else

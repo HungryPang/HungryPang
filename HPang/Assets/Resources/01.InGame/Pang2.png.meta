@@ -1,0 +1,389 @@
+fileFormatVersion: 2
+guid: 2d05d1ee865133544b8459aeb5cc06d5
+timeCreated: 1470285960
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Pang2_0
+    21300002: Pang2_1
+    21300004: Pang2_2
+    21300006: Pang2_3
+    21300008: Pang2_4
+    21300010: Pang2_5
+    21300012: Pang2_6
+    21300014: Pang2_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Pang2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -2, y: -65}
+        - {x: 3, y: -65}
+        - {x: 3, y: -40}
+        - {x: 1, y: -38}
+        - {x: -2, y: -39}
+      - - {x: -4, y: 65}
+        - {x: -39, y: 52}
+        - {x: -50, y: 21}
+        - {x: -33, y: -11}
+        - {x: -29, y: -17}
+        - {x: -27, y: -19}
+        - {x: -28, y: -18}
+        - {x: -34, y: -10}
+        - {x: -48, y: -10}
+        - {x: -65, y: -28}
+        - {x: -65, y: -35}
+        - {x: -21, y: -55}
+        - {x: 65, y: -55}
+        - {x: 65, y: 41}
+        - {x: 4, y: 65}
+      - - {x: 61, y: -27}
+        - {x: 62, y: -30}
+        - {x: 65, y: -30}
+        - {x: 65, y: -25}
+        - {x: 63, y: -25}
+      - - {x: -52, y: 21}
+        - {x: -57, y: 17}
+        - {x: -57, y: 1}
+        - {x: -56, y: -3}
+        - {x: -54, y: -4}
+        - {x: -39, y: -4}
+        - {x: -34, y: -1}
+        - {x: -34, y: 16}
+        - {x: -41, y: 21}
+    - name: Pang2_1
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33, y: 65}
+        - {x: -65, y: 38}
+        - {x: -65, y: -65}
+        - {x: 55, y: -65}
+        - {x: 65, y: -64}
+        - {x: 65, y: 57}
+        - {x: 44, y: 65}
+    - name: Pang2_2
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -44, y: 62}
+        - {x: -63, y: 28}
+        - {x: -63, y: -31}
+        - {x: -20, y: -62}
+        - {x: 21, y: -62}
+        - {x: 61, y: -35}
+        - {x: 61, y: 44}
+        - {x: 34, y: 62}
+    - name: Pang2_3
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 0
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 54}
+        - {x: -4, y: 54}
+        - {x: -59, y: -19}
+        - {x: -59, y: -21}
+        - {x: -57, y: -23}
+        - {x: -41, y: -36}
+        - {x: -30, y: -39}
+        - {x: -29, y: -52}
+        - {x: -15, y: -58}
+        - {x: 20, y: -58}
+        - {x: 38, y: -43}
+        - {x: 53, y: -23}
+        - {x: 53, y: 41}
+      - - {x: -8, y: 46}
+        - {x: -10, y: 47}
+        - {x: -35, y: 47}
+        - {x: -42, y: 46}
+        - {x: -57, y: 24}
+        - {x: -57, y: -6}
+        - {x: -56, y: -8}
+        - {x: -49, y: -10}
+        - {x: -34, y: -10}
+        - {x: -32, y: -7}
+        - {x: -6, y: 26}
+        - {x: -6, y: 44}
+    - name: Pang2_4
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 0
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 58}
+        - {x: -4, y: 57}
+        - {x: -61, y: -19}
+        - {x: -61, y: -26}
+        - {x: -36, y: -39}
+        - {x: -32, y: -39}
+        - {x: -23, y: -36}
+        - {x: -22, y: -39}
+        - {x: -7, y: -60}
+        - {x: 48, y: -60}
+        - {x: 57, y: -51}
+        - {x: 57, y: 4}
+        - {x: 3, y: 58}
+      - - {x: 30, y: 52}
+        - {x: 6, y: 52}
+        - {x: 4, y: 47}
+        - {x: 4, y: 35}
+        - {x: 9, y: 31}
+        - {x: 44, y: -12}
+        - {x: 56, y: -12}
+        - {x: 57, y: -9}
+        - {x: 57, y: 34}
+        - {x: 42, y: 50}
+      - - {x: -24, y: 51}
+        - {x: -59, y: 35}
+        - {x: -59, y: -4}
+        - {x: -54, y: -9}
+        - {x: -39, y: -9}
+        - {x: -32, y: -7}
+        - {x: -5, y: 29}
+        - {x: -5, y: 49}
+        - {x: -10, y: 51}
+    - name: Pang2_5
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 0
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 0, y: 64}
+        - {x: -7, y: 64}
+        - {x: -65, y: -3}
+        - {x: -65, y: -42}
+        - {x: -36, y: -60}
+        - {x: 21, y: -60}
+        - {x: 46, y: -44}
+        - {x: 58, y: -27}
+        - {x: 58, y: 1}
+        - {x: 2, y: 62}
+      - - {x: 61, y: -19}
+        - {x: 61, y: -22}
+        - {x: 63, y: -24}
+        - {x: 65, y: -24}
+        - {x: 65, y: -17}
+        - {x: 63, y: -17}
+      - - {x: 2, y: 57}
+        - {x: 2, y: 35}
+        - {x: 6, y: 3}
+        - {x: 35, y: -10}
+        - {x: 58, y: -10}
+        - {x: 58, y: 49}
+        - {x: 38, y: 57}
+      - - {x: -45, y: 46}
+        - {x: -64, y: 37}
+        - {x: -64, y: -1}
+        - {x: -57, y: -7}
+        - {x: -26, y: -7}
+        - {x: -26, y: 46}
+      - - {x: -27, y: 57}
+        - {x: -30, y: 50}
+        - {x: -30, y: 40}
+        - {x: -23, y: 36}
+        - {x: -14, y: 36}
+        - {x: -8, y: 37}
+        - {x: -8, y: 52}
+        - {x: -15, y: 57}
+    - name: Pang2_6
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 0
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17, y: 65}
+        - {x: -65, y: -16}
+        - {x: -65, y: -36}
+        - {x: -34, y: -45}
+        - {x: -26, y: -30}
+        - {x: -34, y: -24}
+        - {x: -16, y: -27}
+        - {x: -26, y: -36}
+        - {x: -29, y: -45}
+        - {x: -6, y: -56}
+        - {x: -3, y: -46}
+        - {x: -3, y: -43}
+        - {x: -3, y: -63}
+        - {x: -4, y: -65}
+        - {x: 44, y: -65}
+        - {x: 65, y: -28}
+        - {x: 65, y: -1}
+        - {x: 3, y: 65}
+      - - {x: 62, y: 16}
+        - {x: 62, y: 8}
+        - {x: 64, y: 6}
+        - {x: 65, y: 6}
+        - {x: 65, y: 43}
+        - {x: 46, y: 56}
+        - {x: 27, y: 60}
+        - {x: 6, y: 60}
+        - {x: 4, y: 58}
+        - {x: 4, y: 27}
+        - {x: 37, y: -12}
+        - {x: 60, y: -12}
+        - {x: 64, y: -9}
+        - {x: 63, y: 1}
+        - {x: 59, y: 6}
+        - {x: 62, y: 10}
+      - - {x: -48, y: 48}
+        - {x: -65, y: 35}
+        - {x: -65, y: 2}
+        - {x: -61, y: -5}
+        - {x: -55, y: -9}
+        - {x: -40, y: -9}
+        - {x: -26, y: 19}
+        - {x: -26, y: 44}
+        - {x: -29, y: 48}
+      - - {x: -21, y: 60}
+        - {x: -30, y: 56}
+        - {x: -30, y: 43}
+        - {x: -24, y: 38}
+        - {x: -13, y: 38}
+        - {x: -8, y: 39}
+        - {x: -8, y: 55}
+        - {x: -13, y: 60}
+    - name: Pang2_7
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 0
+        width: 130
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 65}
+        - {x: -65, y: -17}
+        - {x: -65, y: -36}
+        - {x: -11, y: -65}
+        - {x: 14, y: -65}
+        - {x: 39, y: -60}
+        - {x: 65, y: -30}
+        - {x: 65, y: -1}
+        - {x: 3, y: 65}
+      - - {x: -50, y: -24}
+        - {x: -51, y: -28}
+        - {x: -51, y: -40}
+        - {x: -46, y: -43}
+        - {x: -38, y: -43}
+        - {x: -31, y: -40}
+        - {x: -31, y: -26}
+        - {x: -37, y: -24}
+      - - {x: 4, y: 63}
+        - {x: 4, y: 36}
+        - {x: 44, y: -10}
+        - {x: 52, y: -12}
+        - {x: 65, y: -12}
+        - {x: 65, y: 54}
+        - {x: 44, y: 63}
+      - - {x: -29, y: 49}
+        - {x: -46, y: 49}
+        - {x: -56, y: 46}
+        - {x: -65, y: 37}
+        - {x: -65, y: -3}
+        - {x: -61, y: -9}
+        - {x: -45, y: -9}
+        - {x: -40, y: -2}
+        - {x: -27, y: 26}
+        - {x: -27, y: 45}
+      - - {x: -28, y: 62}
+        - {x: -31, y: 55}
+        - {x: -31, y: 46}
+        - {x: -22, y: 39}
+        - {x: -15, y: 39}
+        - {x: -8, y: 42}
+        - {x: -8, y: 57}
+        - {x: -10, y: 62}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

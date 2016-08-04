@@ -16,6 +16,8 @@ public class csFoodItem : MonoBehaviour {
     public int SetPosX { set { nMyPosX = value; } }
     public int SetPosY { set { nMyPosY = value; } }
 
+    public bool bClick = false;
+
     //SpriteRenderer effectRender;
 
     public FoodInfo.FoodData GetSetFoodData
@@ -37,22 +39,18 @@ public class csFoodItem : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        // 도화선 폭팔
-        if (true == bChaining)
-        {
-            Efx.Spawn(this.transform.position, Quaternion.identity);
-            foodSystem.ChangeFoodItemInStorage(this);
-            foodSystem.GatherScore();
-            bChaining = false;
-        }
+        bClick = false;
 
         // 클릭 알고리즘
         if (Input.GetMouseButtonDown(0) && PickingTrue())
         {
-            if(selectSystem.EatCheckFood(this) || foodSystem.CheckPigTime())
+            bClick = true;
+            int EatCheckResult = selectSystem.EatCheckFood(this);
+            if (EatCheckResult != 0 || foodSystem.CheckPigTime())
             {
                 // 도화선 검사
                 foodSystem.ExplosionNearFoodItem(nMyPosY, nMyPosX, myFoodData.eType);
+                foodSystem.RenderEatFoodFeedBack(EatCheckResult);
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using QuickPool;
 
 namespace FoodInfo
 {
@@ -83,6 +84,13 @@ public class csFoodSystem : MonoBehaviour {
     public csLifeSystem lifeSystem = null;
     public csPigTimeSystem pigtimeSystem = null;
     public csScoreSystem scoreSystem = null;
+    public csComboSystem comboSystem = null;
+
+    public GameObject objFoodFeedBack = null;
+    Sprite[] FeedBackImg = null;
+    int nFoodFeedBack = -1;
+    float fFeedAccTime = 0.0f;
+    bool bCheckInFeedBack = false;
 
     LinkedList<FoodInfo.FOODTYPE> FoodStorageList = new LinkedList<FoodInfo.FOODTYPE>();
 
@@ -92,12 +100,14 @@ public class csFoodSystem : MonoBehaviour {
         lifeSystem = gameMgr.lifeSystem;
         pigtimeSystem = gameMgr.pigtimeSystem;
         scoreSystem = gameMgr.scoreSystem;
+        comboSystem = gameMgr.comboSystem;
     }
 
     void Start()
     {
         //print(resourceMgr);
         FoodBox = GetComponentInChildren<csFoodBox>();
+        FeedBackImg = resourceMgr.mFeedBackSprites;
 
         // 푸드박스 채우기
         for (int y = 0; y < FoodBox.nRowSize; ++y)
@@ -122,18 +132,85 @@ public class csFoodSystem : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        CheckEattingFood();
 
+        fFeedAccTime += Time.deltaTime;
+        if(true == bCheckInFeedBack && fFeedAccTime > 0.35f)
+        {
+            bCheckInFeedBack = false;
+            objFoodFeedBack.GetComponent<SpriteRenderer>().enabled = false;
+        }
     }
 
     public void ComposeFoodBoxList(int num, FoodInfo.FOODTYPE type)
     {
         FoodBoxCanTypeArray[num] = type;
     }
+    void CheckEattingFood()
+    {
+        // 도화선 폭파 알고리즘
+        int BoomCont = 0;
+        bool bCheckClick = false;
+        for (int y = 0; y < FoodBox.nRowSize; ++y)
+        {
+            for (int x = 0; x < FoodBox.nColSize; ++x)
+            {
+                csFoodItem FoodItem = FoodBox.FoodList[y, x].GetComponent<csFoodItem>();
 
+                if (true == FoodItem.bClick)
+                    bCheckClick = true;
+                if (true == FoodItem.bChaining)
+                {
+                    ChangeFoodItemInStorage(FoodItem);
+                    GatherScore();
+                    FoodItem.Efx.Spawn(FoodItem.transform.position, Quaternion.identity);
+                    FoodItem.bChaining = false;
+                    ++BoomCont;
+                }
+            }
+        }
+        if(0 != BoomCont)
+            comboSystem.IncreaseComboCount(BoomCont);
+        
+        if(0 == BoomCont && Input.GetMouseButtonDown(0) && bCheckClick)
+        {
+            RenderEatFoodFeedBack(0);
+        }
+
+    }
+
+    bool PickingTrueInFoodBox()
+    {
+        print(Input.mousePosition);
+        bool bResult = false;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
+        print(hit.collider.transform);
+
+        if (hit.collider != null && hit.collider.transform == this.transform)
+        {
+            bResult = true;
+        }
+        return bResult;
+    }
+
+    public void RenderEatFoodFeedBack(int num)
+    {
+        fFeedAccTime = 0.0f;
+        bCheckInFeedBack = true;
+        nFoodFeedBack = num;
+        objFoodFeedBack.GetComponent<SpriteRenderer>().sprite = FeedBackImg[nFoodFeedBack];
+        objFoodFeedBack.GetComponent<SpriteRenderer>().enabled = true;
+        objFoodFeedBack.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        iTween.ScaleTo(objFoodFeedBack, iTween.Hash("x", 3.0f, "y", 3.0f, "time", 0.35f
+                          , "easetype", iTween.EaseType.easeOutElastic));
+
+    }
+    // 도화선 찾기
     public void ExplosionNearFoodItem(int y, int x, FoodInfo.FOODTYPE type)
     {
         if (x < 0 || y < 0 || x >= FoodBox.nRowSize || y >= FoodBox.nColSize) return;
-
+        if (FoodBox.FoodList[y, x].activeInHierarchy == false) return;
 
         bool bCheck = false;
         if (FoodBox.FoodList[y, x].GetComponent<csFoodItem>().bChaining == false
@@ -188,6 +265,7 @@ public class csFoodSystem : MonoBehaviour {
         lifeSystem.IncreaseLifePoint(10.0f);
         pigtimeSystem.IncreasePigValue(30.0f);
         scoreSystem.IncreaseScore(500);
+       // comboSystem.IncreaseComboCount(1);
     }
 
     public bool CheckPigTime()

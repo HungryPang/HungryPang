@@ -12,6 +12,7 @@ public class csGameSystem : MonoBehaviour {
     public csLifeSystem         lifeSystem  = null;
     public csPigTimeSystem      pigtimeSystem = null;
     public csScoreSystem        scoreSystem = null;
+    public csComboSystem        comboSystem = null;
 
     // Use this for initialization
     void Start () {

@@ -11,7 +11,7 @@ public class csScoreSystem : MonoBehaviour {
 
     public GameObject Number = null;
     const int nArraySize = 8;
-    const float fSize = 0.6f;
+    const float fSize = 0.45f;
     GameObject[] NumberArray = new GameObject[nArraySize];
 
     public int nGameScore = 0;
@@ -29,7 +29,7 @@ public class csScoreSystem : MonoBehaviour {
             GameObject item = Instantiate(Number);
             item.name = "Number";
             item.transform.parent = this.transform;
-            item.transform.position = this.transform.position + Vector3.left * i * fSize;
+            item.transform.position = this.transform.position + Vector3.left * i * fSize + Vector3.left * 1.8f;
             item.GetComponent<SpriteRenderer>().sprite = NumImageArray[0];
             NumberArray[i] = item;
         }
