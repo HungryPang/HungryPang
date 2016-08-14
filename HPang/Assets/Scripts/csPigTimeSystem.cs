@@ -23,6 +23,9 @@ public class csPigTimeSystem : MonoBehaviour {
     public float fSpeed = 10.0f;
     public float fDecrease = 30.0f;
 
+    bool bNoEatTime = false;        // 아무것도 안먹는시간 활성화 피그타임감소
+    float fNoEatAccTime = 3.0f;
+
 
     // Use this for initialization
     void Start () {
@@ -41,6 +44,10 @@ public class csPigTimeSystem : MonoBehaviour {
             ShowPigTime();
             DecreasePigValue(fAccTime);
         }
+        else
+        {
+            NoEatDecreasePigValue();
+        }
 
     }
     // 피그타임일때 보여주는 것
@@ -53,10 +60,28 @@ public class csPigTimeSystem : MonoBehaviour {
                                                                 , vInitScale.y + Mathf.Sin(fPigAccTime) * fScaleDelta
                                                                 , vInitScale.z);
     }
+    // 3초동안 안먹으면 자체적으로 감소
+    void NoEatDecreasePigValue()
+    {
+        if (bNoEatTime == false){
+            fNoEatAccTime -= Time.deltaTime;
+        }
+        if (fNoEatAccTime < 0.0f){
+            bNoEatTime = true;
+        }
+
+        if (bNoEatTime == true){
+            fPigValue -= Time.deltaTime;
+            if (fPigValue < 0) fPigValue = 0.0f;
+        }
+    }
     // 피그타임 게이지 상승
     public void IncreasePigValue(float value)
     {
         if (bPigTime) return;   // 피그타임일떈 게이지상승 x
+
+        bNoEatTime = false;
+        fNoEatAccTime = 3.0f;
 
         fPigValue += value;
         if (fPigValue >= fPigMaxValue)

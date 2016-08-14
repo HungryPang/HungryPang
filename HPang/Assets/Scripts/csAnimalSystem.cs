@@ -45,7 +45,7 @@ namespace AnimalSystem
 
         public int EatableFood(FoodInfo.FOODTYPE testType)
         {
-            int nResult = 3;   // 2 - Excellent, 1 - Great, 0 - Good, -1 - Can'tEat
+            int nResult = 3;   // [3] - Excellent, [2] - Great, [1] - Good, [0] - Can'tEat
             foreach (FoodInfo.FOODTYPE myEatType in ArrCanEatFood)
             {
                 if (myEatType == testType){
@@ -174,9 +174,9 @@ public class csAnimalSystem : MonoBehaviour {
 
         //오른쪽이 플레이어가 고른 동물 넘버
         animalNumHash[0] = 0;
-        animalNumHash[1] = 1;
-        animalNumHash[2] = 2;
-        animalNumHash[3] = 3;
+        animalNumHash[1] = 3;
+        animalNumHash[2] = 1;
+        animalNumHash[3] = 2; // 동물 선택 부분
 
         AnimalSystem.Animal[] AnimalList = AnimalSystem.AnimalManager.getInstance().GetAnimalList;
 
@@ -206,10 +206,26 @@ public class csAnimalSystem : MonoBehaviour {
 
         foreach (csAnimalItem Deckitem in AnimalDeckList)
         {
-            if(Deckitem.bClick == true)
+            if(Deckitem.bClick == true || Deckitem == foodSystem.selectMgr.SelectedAnimalItem)
             {
-                objClickUI.GetComponent<SpriteRenderer>().enabled = true;
-                objClickUI.transform.position = Deckitem.transform.position;
+                //objClickUI.GetComponent<SpriteRenderer>().enabled = true;
+                //objClickUI.transform.position = Deckitem.transform.position;
+                // 최적화 수정요망 ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ 클릭시 어두워지고 크기변환
+                Color cl = Deckitem.GetComponent<SpriteRenderer>().color;
+                float fAlpha = cl.a;
+                cl = new Color(1.0f, 1.0f, 1.0f);
+                cl.a = fAlpha;
+                Deckitem.GetComponent<SpriteRenderer>().color = cl;
+                Deckitem.transform.localScale = new Vector3(1.4f, 1.4f, 1.4f);
+            }
+            else
+            {
+                Color cl = Deckitem.GetComponent<SpriteRenderer>().color;
+                float fAlpha = cl.a;
+                cl = new Color(0.3f, 0.3f, 0.3f);
+                cl.a = fAlpha;
+                Deckitem.GetComponent<SpriteRenderer>().color = cl;
+                Deckitem.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             }
         }
     }

@@ -48,8 +48,8 @@ public class csFoodBox : MonoBehaviour {
                 newFood.transform.parent = transform;
                 newFoodSlot.transform.parent = transform;
 
-                newFood.GetComponent<csFoodItem>().SetPosX = x;
-                newFood.GetComponent<csFoodItem>().SetPosY = y;
+                newFood.GetComponent<csFoodItem>().nMyPosX = x;
+                newFood.GetComponent<csFoodItem>().nMyPosY = y;
 
                 newFood.transform.position = offset + temp;
                 newFoodSlot.transform.position = offset + temp;

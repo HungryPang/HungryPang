@@ -30,7 +30,7 @@ public class csComboSystem : MonoBehaviour {
     {
         gameMgr = FindObjectOfType(typeof(csGameSystem)) as csGameSystem;
         resourceMgr = gameMgr.resourceMgr;
-        NumImageArray = resourceMgr.GetmComboSpriteArray;
+        NumImageArray = resourceMgr.GetmNumberSpriteArray;
 
         contArray = new GameObject[ArraySize];
 
@@ -124,7 +124,7 @@ public class csComboSystem : MonoBehaviour {
 
         for (int i = 0; i < ArraySize; ++i)
         {
-            iTween.ScaleTo(contArray[i].gameObject, iTween.Hash("x", 4.0f, "y", 4.0f, "time", 1.0f
+            iTween.ScaleTo(contArray[i].gameObject, iTween.Hash("x", 1.5f, "y", 1.5f, "time", 0.5f
                           , "easetype", iTween.EaseType.easeOutElastic));
         }
     }

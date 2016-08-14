@@ -44,20 +44,21 @@ public class csResourceMgr : MonoBehaviour {
     void Awake()
     {
         mFoodSprites = Resources.LoadAll<Sprite>("01.InGame/" + FoodSpritesName.ToString()) as Sprite[];
-        mAnimalSprites = new Sprite[4];
+        //mAnimalSprites = new Sprite[4];
         mAniamlFrontSprites = new Sprite[4];
         mFeedBackSprites = new Sprite[4];
         mTempFront = new Sprite[4];
         for (int i = 0; i < 4; ++i)
         {
-            mAnimalSprites[i] = Resources.Load<Sprite>("01.InGame/animal_" + i.ToString());
-            mAniamlFrontSprites = Resources.LoadAll<Sprite>("01.InGame/animal_Front_Sprite_" + i.ToString());
-            mTempFront[i] = Resources.Load<Sprite>("01.InGame/animal_Front_" + i.ToString());
-            SpriteImgList.Add(new ResourceNsp.strImage(mAniamlFrontSprites, mAniamlFrontSprites.Length));
+            //mAnimalSprites[i] = Resources.Load<Sprite>("01.InGame/animal_" + i.ToString());
+            //mAniamlFrontSprites = Resources.LoadAll<Sprite>("01.InGame/animal_Front_Sprite_" + i.ToString());
+            mTempFront[i] = Resources.Load<Sprite>("01.InGame/Animal_" + i.ToString());
+            //SpriteImgList.Add(new ResourceNsp.strImage(mAniamlFrontSprites, mAniamlFrontSprites.Length));
 
-            mFeedBackSprites[i] = Resources.Load<Sprite>("02.UI/UI_FeedBack_" + i.ToString());
+            //mFeedBackSprites[i] = Resources.Load<Sprite>("02.UI/UI_FeedBack" + i.ToString());
         }
-
+        mAnimalSprites = Resources.LoadAll<Sprite>("01.InGame/Animal_Front") as Sprite[];
+        mFeedBackSprites = Resources.LoadAll<Sprite>("02.UI/UI_FeedBack") as Sprite[];
         mBoomDustSprites = Resources.LoadAll<Sprite>("01.InGame/" + BoomDustSpritesName.ToString()) as Sprite[];
         mNumberSprites = Resources.LoadAll<Sprite>("02.UI/" + NumberSpritesName.ToString()) as Sprite[];
         mComboSprites = Resources.LoadAll<Sprite>("02.UI/" + "UI_Combo") as Sprite[];

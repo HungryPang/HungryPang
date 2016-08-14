@@ -85,12 +85,16 @@ public class csFoodSystem : MonoBehaviour {
     public csPigTimeSystem pigtimeSystem = null;
     public csScoreSystem scoreSystem = null;
     public csComboSystem comboSystem = null;
+    public csSelectedManger selectMgr = null;
+
 
     public GameObject objFoodFeedBack = null;
     Sprite[] FeedBackImg = null;
     int nFoodFeedBack = -1;
     float fFeedAccTime = 0.0f;
     bool bCheckInFeedBack = false;
+
+    public GameObject objFoodSelHelper = null;
 
     LinkedList<FoodInfo.FOODTYPE> FoodStorageList = new LinkedList<FoodInfo.FOODTYPE>();
 
@@ -101,6 +105,7 @@ public class csFoodSystem : MonoBehaviour {
         pigtimeSystem = gameMgr.pigtimeSystem;
         scoreSystem = gameMgr.scoreSystem;
         comboSystem = gameMgr.comboSystem;
+        selectMgr = gameMgr.selectMgr;
     }
 
     void Start()
@@ -125,7 +130,7 @@ public class csFoodSystem : MonoBehaviour {
         // 저장리스트 채우기
         for (int i = 0; i < 1000; ++i)
         {
-            FoodInfo.FOODTYPE val = FoodBoxCanTypeArray[Random.Range(0, nFoodtypeNum - 1)];
+            FoodInfo.FOODTYPE val = FoodBoxCanTypeArray[Random.Range(0, nFoodtypeNum)];
             FoodStorageList.AddLast(val);
         }
     }
@@ -159,12 +164,13 @@ public class csFoodSystem : MonoBehaviour {
 
                 if (true == FoodItem.bClick)
                     bCheckClick = true;
-                if (true == FoodItem.bChaining)
+                if (true == FoodItem.bPangForComboCheck)
                 {
-                    ChangeFoodItemInStorage(FoodItem);
-                    GatherScore();
-                    FoodItem.Efx.Spawn(FoodItem.transform.position, Quaternion.identity);
-                    FoodItem.bChaining = false;
+                    //ChangeFoodItemInStorage(FoodItem);
+                    //GatherScore();
+                    //FoodItem.Efx.Spawn(FoodItem.transform.position, Quaternion.identity);
+                    //FoodItem.bChaining = false;
+                    FoodItem.bPangForComboCheck = false;
                     ++BoomCont;
                 }
             }
@@ -183,6 +189,7 @@ public class csFoodSystem : MonoBehaviour {
 
     public void RenderEatFoodFeedBack(int num)
     {
+        print(num);
         fFeedAccTime = 0.0f;
         bCheckInFeedBack = true;
         nFoodFeedBack = num;
@@ -194,7 +201,7 @@ public class csFoodSystem : MonoBehaviour {
 
     }
     // 도화선 찾기
-    public void ExplosionNearFoodItem(int y, int x, FoodInfo.FOODTYPE type)
+    public void ExplosionNearFoodItem(int y, int x, FoodInfo.FOODTYPE type, int dist)
     {
         if (x < 0 || y < 0 || x >= FoodBox.nRowSize || y >= FoodBox.nColSize) return;
         if (FoodBox.FoodList[y, x].activeInHierarchy == false) return;
@@ -205,27 +212,29 @@ public class csFoodSystem : MonoBehaviour {
         {
             bCheck = true;
             FoodBox.FoodList[y, x].GetComponent<csFoodItem>().bChaining = true;
+            FoodBox.FoodList[y, x].GetComponent<csFoodItem>().nDist = dist;
+            FoodBox.FoodList[y, x].GetComponent<csFoodItem>().bPangForComboCheck = true;
         }
 
         if (true == bCheck)
         {
             if (y % 2 == 0)
             {
-                ExplosionNearFoodItem(y - 1, x - 1, type);
-                ExplosionNearFoodItem(y - 1, x, type);
-                ExplosionNearFoodItem(y + 1, x - 1, type);
-                ExplosionNearFoodItem(y + 1, x, type);
-                ExplosionNearFoodItem(y, x - 1, type);
-                ExplosionNearFoodItem(y, x + 1, type);
+                ExplosionNearFoodItem(y - 1, x - 1, type, dist + 1);
+                ExplosionNearFoodItem(y - 1, x, type, dist + 1);
+                ExplosionNearFoodItem(y + 1, x - 1, type, dist + 1);
+                ExplosionNearFoodItem(y + 1, x, type, dist + 1);
+                ExplosionNearFoodItem(y, x - 1, type, dist + 1);
+                ExplosionNearFoodItem(y, x + 1, type, dist + 1);
             }
             else
             {
-                ExplosionNearFoodItem(y - 1, x, type);
-                ExplosionNearFoodItem(y - 1, x + 1, type);
-                ExplosionNearFoodItem(y + 1, x, type);
-                ExplosionNearFoodItem(y + 1, x + 1, type);
-                ExplosionNearFoodItem(y, x - 1, type);
-                ExplosionNearFoodItem(y, x + 1, type);
+                ExplosionNearFoodItem(y - 1, x, type, dist + 1);
+                ExplosionNearFoodItem(y - 1, x + 1, type, dist + 1);
+                ExplosionNearFoodItem(y + 1, x, type, dist + 1);
+                ExplosionNearFoodItem(y + 1, x + 1, type, dist + 1);
+                ExplosionNearFoodItem(y, x - 1, type, dist + 1);
+                ExplosionNearFoodItem(y, x + 1, type, dist + 1);
             }
         }
     }
@@ -241,18 +250,47 @@ public class csFoodSystem : MonoBehaviour {
 
         //print(nIndex);
         if (nIndex == -1) print("error");
-
+        // 늦게 등장
+        item.bChange = true;
+        item.GetComponent<SpriteRenderer>().enabled = false;
+        //
         item.SettingFoodData(resourceMgr.GetFoodSpriteArray[nIndex],
             FoodInfo.FoodManager.getInstance().HashFoodData(nIndex));
     }
 
     // 점수 주기
-    public void GatherScore()
+    public void GatherScore(int nWhatFood)
     {
-        lifeSystem.IncreaseLifePoint(4.0f);
-        pigtimeSystem.IncreasePigValue(4.0f);
-        scoreSystem.IncreaseScore(500);
-       // comboSystem.IncreaseComboCount(1);
+        int DefaultScore = 1000;
+        int nComboCnt = comboSystem.nComboCnt;
+        float fComCntPercent = nComboCnt * 0.01f;
+        float fLikePercent = 0.0f;
+
+        switch(nWhatFood){
+            case 3:   fLikePercent = 2.0f;   break; // excellent
+            case 2:   fLikePercent = 1.5f;   break;// great
+            case 1:   fLikePercent = 1.0f;   break;// good
+        }
+        float fLifeValue = 4.0f;
+        float Score;
+        if(true == pigtimeSystem.bPigTime)
+        {
+            Score = (DefaultScore * 2.0f + DefaultScore * fComCntPercent) * fLikePercent;
+            lifeSystem.IncreaseLifePoint(fLifeValue * 2.0f);
+            scoreSystem.IncreaseScore((int)(Score));
+        }
+        else
+        {
+            // 콤보에 따른 피그타임 증가수치
+            float fPlusPigValue = 1.0f;
+            if (nComboCnt >= 100 && nComboCnt < 200) fPlusPigValue *= 2.0f;
+            if (nComboCnt >= 200) fPlusPigValue *= 4.0f;
+
+            Score = (DefaultScore + DefaultScore * fComCntPercent) * fLikePercent;
+            lifeSystem.IncreaseLifePoint(fLifeValue);
+            pigtimeSystem.IncreasePigValue(fPlusPigValue);
+            scoreSystem.IncreaseScore((int)(Score));
+        }
     }
 
     public bool CheckPigTime()

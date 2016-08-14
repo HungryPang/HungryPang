@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: b566b7b90908cc24598ed2ca206950e8
+timeCreated: 1471162494
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: UI_FeedBack_3
+    21300002: UI_FeedBack_2
+    21300004: UI_FeedBack_1
+    21300006: UI_FeedBack_0
+    21300008: UI_FeedBack_4
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 300
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: UI_FeedBack_3
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 1092
+        width: 909
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 216.92354, y: 55.694153}
+        - {x: 87.92354, y: 59.694153}
+        - {x: 19.923538, y: 59.694153}
+        - {x: -42.07646, y: 29.694153}
+        - {x: -52.07646, y: 12.694153}
+        - {x: -52.07646, y: 9.694153}
+        - {x: -54.07646, y: 6.694153}
+        - {x: -54.07646, y: 3.6941528}
+        - {x: -55.07646, y: 2.6941528}
+        - {x: -70.07646, y: -20.305847}
+        - {x: -56.07646, y: 1.6941528}
+        - {x: -53.07646, y: 8.694153}
+        - {x: -51.07646, y: 13.694153}
+        - {x: -58.07646, y: 32.694153}
+        - {x: -137.07646, y: 30.694153}
+        - {x: -155.07646, y: 20.694153}
+        - {x: -170.07646, y: 23.694153}
+        - {x: -179.07646, y: 14.694153}
+        - {x: -184.07646, y: 21.694153}
+        - {x: -167.07646, y: 23.694153}
+        - {x: -152.07646, y: 28.694153}
+        - {x: -166.07646, y: 59.694153}
+        - {x: -230.07646, y: 59.694153}
+        - {x: -247.07646, y: 47.694153}
+        - {x: -247.07646, y: -50.305847}
+        - {x: -235.07646, y: -60.305847}
+        - {x: 246.92354, y: -60.305847}
+        - {x: 247.92354, y: -53.305847}
+        - {x: 247.92354, y: 29.694153}
+    - name: UI_FeedBack_2
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 844
+        width: 542
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -127.0379, y: 58.476044}
+        - {x: -147.0379, y: 49.476044}
+        - {x: -147.0379, y: -54.523956}
+        - {x: -127.0379, y: -57.523956}
+        - {x: 124.9621, y: -57.523956}
+        - {x: 147.9621, y: -38.523956}
+        - {x: 147.9621, y: 21.476044}
+        - {x: 128.9621, y: 58.476044}
+    - name: UI_FeedBack_1
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 568
+        width: 512
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -121.22473, y: 62.047882}
+        - {x: -139.22473, y: 52.047882}
+        - {x: -139.22473, y: -30.952118}
+        - {x: -110.22473, y: -47.952118}
+        - {x: -80.22473, y: -60.952118}
+        - {x: 136.77527, y: -60.952118}
+        - {x: 139.77527, y: -40.952118}
+        - {x: 139.77527, y: 62.047882}
+    - name: UI_FeedBack_0
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 575
+        width: 399
+        height: 232
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 108.68152, y: 63.850403}
+        - {x: -108.31848, y: 63.850403}
+        - {x: -108.31848, y: -63.149597}
+        - {x: 95.68152, y: -63.149597}
+        - {x: 106.68152, y: -51.149597}
+        - {x: 108.68152, y: -46.149597}
+    - name: UI_FeedBack_4
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 332
+        width: 644
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 150.77658, y: 35.348404}
+        - {x: 87.77658, y: 58.348404}
+        - {x: -20.22342, y: 58.348404}
+        - {x: -81.22342, y: 32.348404}
+        - {x: -109.22342, y: 8.348404}
+        - {x: -97.22342, y: 19.348404}
+        - {x: -88.22342, y: 29.348404}
+        - {x: -75.22342, y: 48.348404}
+        - {x: -92.22342, y: 58.348404}
+        - {x: -158.22342, y: 58.348404}
+        - {x: -175.22342, y: 30.348404}
+        - {x: -175.22342, y: -50.651596}
+        - {x: -155.22342, y: -57.651596}
+        - {x: 163.77658, y: -57.651596}
+        - {x: 175.77658, y: -32.651596}
+        - {x: 175.77658, y: 16.348404}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

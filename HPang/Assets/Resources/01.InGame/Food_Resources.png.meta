@@ -1,0 +1,343 @@
+fileFormatVersion: 2
+guid: 02f4dd6f468b22745b8b8032854af1d8
+timeCreated: 1471159413
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Food_Resources_0
+    21300002: Food_Resources_1
+    21300004: Food_Resources_2
+    21300006: Food_Resources_3
+    21300008: Food_Resources_4
+    21300010: Food_Resources_5
+    21300012: Food_Resources_6
+    21300014: Food_Resources_7
+    21300016: Food_Resources_8
+    21300018: Food_Resources_9
+    21300020: Food_Resources_10
+    21300022: Food_Resources_11
+    21300024: Food_Resources_12
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 200
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Food_Resources_0
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1493
+        width: 343
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -93.079124, y: 52.524597}
+        - {x: -93.079124, y: -14.475403}
+        - {x: -84.079124, y: -44.475403}
+        - {x: -58.079124, y: -52.475403}
+        - {x: 55.920876, y: -52.475403}
+        - {x: 93.920876, y: -35.475403}
+        - {x: 93.920876, y: 52.524597}
+    - name: Food_Resources_1
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 1481
+        width: 324
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.839752, y: 78.00598}
+        - {x: -25.839752, y: 76.00598}
+        - {x: -87.83975, y: -17.994019}
+        - {x: -87.83975, y: -76.99402}
+        - {x: 32.160248, y: -76.99402}
+        - {x: 89.16025, y: -32.99402}
+        - {x: 89.16025, y: 28.005981}
+        - {x: 58.160248, y: 78.00598}
+    - name: Food_Resources_2
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 1160
+        width: 348
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 81.48271, y: 69.132996}
+        - {x: 57.48271, y: 69.132996}
+        - {x: 47.48271, y: 66.132996}
+        - {x: -40.51729, y: 69.132996}
+        - {x: -44.51729, y: 69.132996}
+        - {x: -71.51729, y: 49.132996}
+        - {x: -94.51729, y: 21.132996}
+        - {x: -94.51729, y: -68.867004}
+        - {x: 28.482712, y: -68.867004}
+        - {x: 95.48271, y: 22.132996}
+        - {x: 95.48271, y: 42.132996}
+        - {x: 92.48271, y: 50.132996}
+    - name: Food_Resources_3
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 1169
+        width: 212
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 52.77127, y: 68.02191}
+        - {x: -18.22873, y: 68.02191}
+        - {x: -21.22873, y: 66.02191}
+        - {x: -53.22873, y: 17.021912}
+        - {x: -57.22873, y: 1.0219116}
+        - {x: -57.22873, y: -48.97809}
+        - {x: -54.22873, y: -67.97809}
+        - {x: 14.771271, y: -67.97809}
+        - {x: 26.77127, y: -56.97809}
+        - {x: 58.77127, y: -19.978088}
+        - {x: 58.77127, y: 58.02191}
+    - name: Food_Resources_4
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 842
+        width: 243
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -23.06649, y: 52.389618}
+        - {x: -46.06649, y: 47.389618}
+        - {x: -66.06649, y: 20.389618}
+        - {x: -66.06649, y: -44.610382}
+        - {x: -39.06649, y: -51.610382}
+        - {x: 63.93351, y: -51.610382}
+        - {x: 66.93351, y: -32.610382}
+        - {x: 66.93351, y: 52.389618}
+    - name: Food_Resources_5
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 840
+        width: 184
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 44.03656, y: 56.803192}
+        - {x: 13.03656, y: 56.803192}
+        - {x: -29.96344, y: 40.803192}
+        - {x: -49.96344, y: 25.803192}
+        - {x: -49.96344, y: -32.196808}
+        - {x: -40.96344, y: -56.196808}
+        - {x: 17.03656, y: -56.196808}
+        - {x: 42.03656, y: -38.196808}
+        - {x: 51.03656, y: -17.196808}
+        - {x: 51.03656, y: 40.803192}
+    - name: Food_Resources_6
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 490
+        width: 226
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5.6436157, y: 71.17685}
+        - {x: -24.356384, y: 65.17685}
+        - {x: -61.356384, y: 3.1768494}
+        - {x: -61.356384, y: -61.82315}
+        - {x: -34.356384, y: -70.82315}
+        - {x: 53.643616, y: -70.82315}
+        - {x: 62.643616, y: -52.82315}
+        - {x: 62.643616, y: 26.17685}
+        - {x: 47.643616, y: 71.17685}
+    - name: Food_Resources_7
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 507
+        width: 216
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 44.418884, y: -10.58844}
+        - {x: 50.418884, y: -11.58844}
+        - {x: 58.418884, y: -12.58844}
+        - {x: 60.418884, y: -10.58844}
+        - {x: 60.418884, y: -1.58844}
+        - {x: 59.418884, y: 1.41156}
+        - {x: 51.418884, y: 9.41156}
+        - {x: 60.418884, y: 26.41156}
+        - {x: 60.418884, y: 38.41156}
+        - {x: 50.418884, y: 42.41156}
+        - {x: 48.418884, y: 38.41156}
+        - {x: 44.418884, y: 42.41156}
+        - {x: 42.418884, y: 42.41156}
+        - {x: 46.418884, y: 41.41156}
+        - {x: 50.418884, y: 42.41156}
+        - {x: 47.418884, y: 51.41156}
+        - {x: 14.418884, y: 51.41156}
+        - {x: -39.581116, y: 24.41156}
+        - {x: -58.581116, y: -12.58844}
+        - {x: -58.581116, y: -21.58844}
+        - {x: -53.581116, y: -24.58844}
+        - {x: -31.581116, y: -29.58844}
+        - {x: -0.5811157, y: -49.58844}
+        - {x: 1.4188843, y: -50.58844}
+        - {x: 14.418884, y: -50.58844}
+        - {x: 42.418884, y: -26.58844}
+        - {x: 46.418884, y: -18.58844}
+        - {x: 45.418884, y: -8.58844}
+    - name: Food_Resources_8
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 477
+        width: 313
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -82.92352, y: 61.61502}
+        - {x: -84.92352, y: 54.61502}
+        - {x: -84.92352, y: -42.38498}
+        - {x: -39.923523, y: -61.38498}
+        - {x: 86.07648, y: -61.38498}
+        - {x: 86.07648, y: 42.61502}
+        - {x: 39.076477, y: 61.61502}
+    - name: Food_Resources_9
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 119
+        width: 206
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15.769951, y: 53.142952}
+        - {x: -49.76995, y: 3.142952}
+        - {x: -55.76995, y: -7.857048}
+        - {x: -55.76995, y: -28.857048}
+        - {x: -34.76995, y: -51.857048}
+        - {x: 18.23005, y: -51.857048}
+        - {x: 57.23005, y: -35.857048}
+        - {x: 57.23005, y: 44.142952}
+        - {x: 38.23005, y: 53.142952}
+    - name: Food_Resources_10
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 135
+        width: 219
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -59.476074, y: 55.334442}
+        - {x: -59.476074, y: -54.665558}
+        - {x: 48.523926, y: -54.665558}
+        - {x: 60.523926, y: -31.665558}
+        - {x: 60.523926, y: 51.334442}
+        - {x: 48.523926, y: 55.334442}
+      - - {x: -56.476074, y: -32.665558}
+        - {x: -54.476074, y: -31.665558}
+        - {x: -54.476074, y: -26.665558}
+        - {x: -55.476074, y: -24.665558}
+        - {x: -58.476074, y: -24.665558}
+        - {x: -59.476074, y: -25.665558}
+        - {x: -59.476074, y: -32.665558}
+    - name: Food_Resources_11
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 157
+        width: 340
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 38.78589, y: 55.28524}
+        - {x: -73.21411, y: 55.28524}
+        - {x: -92.21411, y: 42.28524}
+        - {x: -92.21411, y: -47.71476}
+        - {x: -65.21411, y: -54.71476}
+        - {x: 74.78589, y: -54.71476}
+        - {x: 93.78589, y: -43.71476}
+        - {x: 93.78589, y: 29.28524}
+    - name: Food_Resources_12
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 104
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

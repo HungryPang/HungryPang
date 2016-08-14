@@ -9,16 +9,19 @@ public class csFoodItem : MonoBehaviour {
     FoodInfo.FoodData   myFoodData;
 
     public GameObject Efx;
-
     public bool bChaining = false;
     public int nMyPosX;
     public int nMyPosY;
-    public int SetPosX { set { nMyPosX = value; } }
-    public int SetPosY { set { nMyPosY = value; } }
 
+    public bool bPangForComboCheck = false;
     public bool bClick = false;
+    public bool bChange = false;
+    float fChangeTime = 0.0f;
+    int nClickFoodStat;
 
-    //SpriteRenderer effectRender;
+    public int nDist = -1;
+    float fExploreTime = 0.0f;
+    float fDelayTime = 0.05f;
 
     public FoodInfo.FoodData GetSetFoodData
     {
@@ -41,21 +44,22 @@ public class csFoodItem : MonoBehaviour {
 	void Update () {
         bClick = false;
 
-        // 클릭 알고리즘
-        if (Input.GetMouseButtonDown(0) && PickingTrue())
+        if(true == bChaining)
         {
-            bClick = true;
-            int EatCheckResult = selectSystem.EatCheckFood(this);
-            if (EatCheckResult != 0 || foodSystem.CheckPigTime())
+            fExploreTime += Time.deltaTime;
+            if(fExploreTime > fDelayTime * nDist)
             {
-                // 도화선 검사
-                foodSystem.ExplosionNearFoodItem(nMyPosY, nMyPosX, myFoodData.eType);
-                foodSystem.RenderEatFoodFeedBack(EatCheckResult);
-
-                if(foodSystem.CheckPigTime())
-                    foodSystem.RenderEatFoodFeedBack(3);
+                foodSystem.ChangeFoodItemInStorage(this);
+                foodSystem.GatherScore(nClickFoodStat);
+                Efx.Spawn(this.transform.position, Quaternion.identity);
+                bChaining = false;
+                nDist = -1;
+                fExploreTime = 0.0f;
             }
         }
+
+        DelayRenderFoodImg();
+        nClickFoodStat = ClickAlgorithm();
     }
 
     // Setting FoodData
@@ -76,5 +80,40 @@ public class csFoodItem : MonoBehaviour {
             bResult = true;
         }
         return bResult;
+    }
+
+    void DelayRenderFoodImg()
+    {
+        if (bChange)
+        {
+            fChangeTime += Time.deltaTime;
+            if (fChangeTime > 0.2f)
+            {
+                this.GetComponent<SpriteRenderer>().enabled = true;
+                bChange = false;
+                fChangeTime = 0.0f;
+            }
+        }
+    }
+
+    int ClickAlgorithm()
+    {
+        // 클릭 알고리즘
+        if (Input.GetMouseButtonDown(0) && PickingTrue())
+        {
+            bClick = true;
+            int EatCheckResult = selectSystem.EatCheckFood(this);
+            if (EatCheckResult != 0 || foodSystem.CheckPigTime())
+            {
+                // 도화선 검사
+                foodSystem.ExplosionNearFoodItem(nMyPosY, nMyPosX, myFoodData.eType, 0);
+                foodSystem.RenderEatFoodFeedBack(EatCheckResult);
+
+                if (foodSystem.CheckPigTime())
+                    foodSystem.RenderEatFoodFeedBack(3);
+            }
+            return EatCheckResult;
+        }
+        return -100;
     }
 }

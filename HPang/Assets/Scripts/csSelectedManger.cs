@@ -11,6 +11,14 @@ public class csSelectedManger : MonoBehaviour {
 
     public csAnimalItem SelectedAnimalItem = null;
     //AnimalSystem.Animal SelectedAnimal =
+    public csGameSystem gameMgr = null;
+
+
+    public GameObject PreferBallon = null;
+
+    ////푸드 셀렉 헬퍼
+    //public GameObject objFoodSelHelper = null;
+
 
     csRenderImage[] FoodArray = new csRenderImage[3];
     Sprite[] animalSpriteImg = null;
@@ -21,6 +29,8 @@ public class csSelectedManger : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        gameMgr = FindObjectOfType(typeof(csGameSystem)) as csGameSystem;
+
         FoodArray[0] = SelectedAnimalFoodImgA;
         FoodArray[1] = SelectedAnimalFoodImgB;
         FoodArray[2] = SelectedAnimalFoodImgC;
@@ -31,44 +41,52 @@ public class csSelectedManger : MonoBehaviour {
         }
 
         SelectedAnimalImg.transform.localScale *= 1.3f;
+
+        //Color cl = SelectedAnimalImg.GetComponent<SpriteRenderer>().color;
+        //float alpha = cl.a;
+        //cl *= 0.3f;
+        //cl.a = alpha;
+        //SelectedAnimalImg.GetComponent<SpriteRenderer>().color = cl;
     }
 	
 	// Update is called once per frame
 	void Update () {
 
         //동물 애니메이션 리소스매니저에서 리스트<구조체> 로 담아서 구조체의 spirte배열을 시간단위로 돌림 정리 필요
-        fAccTime += Time.deltaTime;
-        if(animalSpriteImg != null)
-        {
-            int FrameCnt = (int)((fAccTime * 2.0f) / 1.0f);
-            if(FrameCnt >= 2.0f)
-            {
-                fAccTime = 0.0f;
-            }
-            else
-            {
-                // 이미지없어서 예외처리 대충
-                if ((int)SelectedAnimalItem.MyAnimal.eAnimalType == 0)
-                    SelectedAnimalImg.SetImage(resourceMgr.SpriteImgList[(int)SelectedAnimalItem.MyAnimal.eAnimalType].sprite[FrameCnt]);
-                //else
-                //    SelectedAnimalImg.SetImage(resourceMgr.GetAnimalFrontSpriteArray[]);
-            }
-                
-        }
+        //fAccTime += Time.deltaTime;
+        //if(animalSpriteImg != null)
+        //{
+        //    int FrameCnt = (int)((fAccTime * 2.0f) / 1.0f);
+        //    if(FrameCnt >= 2.0f)
+        //    {
+        //        fAccTime = 0.0f;
+        //    }
+        //    else
+        //    {
+        //        // 이미지없어서 예외처리 대충
+        //        if ((int)SelectedAnimalItem.MyAnimal.eAnimalType == 0)
+        //            SelectedAnimalImg.SetImage(resourceMgr.SpriteImgList[(int)SelectedAnimalItem.MyAnimal.eAnimalType].sprite[FrameCnt]);
+        //        //else
+        //        //    SelectedAnimalImg.SetImage(resourceMgr.GetAnimalFrontSpriteArray[]);
+        //    }
+        //}
     }
     
     // 동물 선택시 등록
     public void SetupAnimal(csAnimalItem item)
     {
+        if(PreferBallon.GetComponent<SpriteRenderer>().enabled == false)
+            PreferBallon.GetComponent<SpriteRenderer>().enabled = true;
+
         SelectedAnimalItem = item;
         AnimalSystem.Animal itemAnimal = SelectedAnimalItem.MyAnimal;
 
-        animalSpriteImg = resourceMgr.SpriteImgList[(int)itemAnimal.eAnimalType].sprite;
-        print((int)itemAnimal.eAnimalType);
-        if((int)itemAnimal.eAnimalType == 0)    // 스프라이트 이미지가 없음
-            SelectedAnimalImg.SetImage(resourceMgr.SpriteImgList[(int)itemAnimal.eAnimalType].sprite[0]);
-        else
-            SelectedAnimalImg.SetImage(resourceMgr.mTempFront[(int)itemAnimal.eAnimalType]);
+        //animalSpriteImg = resourceMgr.SpriteImgList[(int)itemAnimal.eAnimalType].sprite;
+        //print((int)itemAnimal.eAnimalType);
+        //if((int)itemAnimal.eAnimalType == 0)    // 스프라이트 이미지가 없음
+        //    SelectedAnimalImg.SetImage(resourceMgr.SpriteImgList[(int)itemAnimal.eAnimalType].sprite[0]);
+        //else
+        SelectedAnimalImg.SetImage(resourceMgr.mTempFront[(int)itemAnimal.eAnimalType]);
 
         int nCnt = 0;
         foreach (csRenderImage FoodIter in FoodArray)
@@ -78,8 +96,9 @@ public class csSelectedManger : MonoBehaviour {
             else
                 FoodIter.SetImage(null);
             ++nCnt;
-
         }
+
+
     }
 
     public int EatCheckFood(csFoodItem item)
